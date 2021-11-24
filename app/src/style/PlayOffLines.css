@@ -1,0 +1,209 @@
+.winner_line, 
+.winner_line_bot, 
+.lower_second_round_winner_line_right_1, 
+.lower_second_round_winner_line_right_2,
+.lower_second_round_winner_line_right_3,
+.lower_second_round_winner_line_right_4,
+.lower_second_round_winner_line_bot_1, 
+.lower_second_round_winner_line_bot_2,
+.upper_first_round_winner_line_right_1,
+.upper_first_round_winner_line_right_2,
+.upper_first_round_winner_line_right_3,
+.upper_first_round_winner_line_right_4,
+.upper_first_round_winner_line_right_5,
+.lower_forth_round_winner_line_right_2,
+.lower_forth_round_winner_line_right_3,
+.lower_forth_round_winner_line_right_5,
+.lower_forth_round_winner_line_bot_1,
+.lower_forth_round_winner_line_bot_2,
+.lower_forth_round_winner_line_bot_3,
+.lower_forth_round_winner_line_bot_4,
+.lower_second_round_winner_line_bot_3, 
+.lower_second_round_winner_line_bot_4
+
+{
+    display: inline-block;
+    background-color: black;
+    border: none;
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+
+
+.winner_line {    
+    margin-top: 0px;
+    margin-bottom: 39px;
+    width: 80px;
+    height: 2px;
+}
+
+.winner_line_bot {
+    margin-top: 39px;
+    margin-bottom: -15px;
+    width: 2px;
+    height: 55px;
+}
+
+
+.lower_second_round_winner_line_right_1 {
+    margin-top: 0px;
+    margin-bottom: 39px;
+    width: 40px;
+    height: 2px;
+    
+}
+
+.lower_second_round_winner_line_bot_1 {
+    margin-top: 39px;
+    margin-bottom: -10px;
+    width: 2px;
+    height: 51px;
+}
+
+.lower_second_round_winner_line_bot_2 {
+    margin-top: 39px;
+    margin-bottom: 39px;
+    width: 2px;
+    height: 48px;
+}
+
+
+.lower_second_round_winner_line_right_2 {
+    margin-top: 0px;
+    margin-bottom: -10px;
+    width: 38px;
+    height: 2px;
+}
+
+.lower_second_round_winner_line_right_3 {
+    margin-top: 0px;
+    margin-bottom: 85px;
+    width: 38px;
+    height: 2px;
+}
+
+.lower_second_round_winner_line_right_4 {
+    margin-top: -300px;
+    margin-bottom: 337px;
+    width: 38px;
+    height: 2px;
+}
+
+
+.upper_first_round_winner_line_right_1 {
+    margin-top: 0px;
+    margin-bottom: 39px;
+    width: 78px;
+    height: 2px;
+   
+}
+
+.upper_first_round_winner_line_right_2 {
+    margin-top: 139px;
+    margin-bottom: 0px;
+    width: 300px;
+    height: 2px;
+   
+}
+
+.upper_first_round_winner_line_right_3 {
+    margin-top: 34px;
+    margin-bottom: 39px;
+    width: 300px;
+    height: 2px;
+   
+}
+
+.upper_first_round_winner_line_right_4 {
+    margin-top: 185px;
+    margin-bottom: 0px;
+    width: 300px;
+    height: 2px;
+   
+   
+}
+
+.upper_first_round_winner_line_right_5 {
+    margin-top: 280px;
+    margin-bottom: 0px;
+    width: 300px;
+    height: 2px;  
+}
+
+
+
+.lower_forth_round_winner_line_right_2 {
+    margin-top: 0px;
+    margin-bottom: -77px;
+    width: 38px;
+    height: 2px;
+
+}
+
+.lower_forth_round_winner_line_right_3 {
+    margin-top: -100px;
+    margin-bottom: 155px;
+    width: 38px;
+    height: 2px;
+
+}
+
+.lower_forth_round_winner_line_bot_1 {
+    margin-top: -100px;
+    margin-bottom: -77px;
+    width: 2px;
+    height: 118px;
+}
+
+.lower_forth_round_winner_line_bot_2 {
+    margin-top: -100px;
+    margin-bottom: 39px;
+    width: 2px;
+    height: 118px;
+
+}
+
+
+.lower_forth_round_winner_line_bot_3 {
+    margin-top: -500px;
+    margin-bottom: 39px;
+    width: 2px;
+    height: 300px;
+
+}
+
+.lower_forth_round_winner_line_bot_4 {
+    margin-top: -100px;
+    margin-bottom: -219px;
+    width: 2px;
+    height: 260px;
+
+}
+
+.lower_forth_round_winner_line_right_5 {
+    margin-top: 0px;
+    margin-bottom: -219px;
+    width: 38px;
+    height: 2px;
+
+}
+
+
+
+
+.lower_second_round_winner_line_bot_3 {
+    margin-top: -100px;
+    margin-bottom: -81px;
+    width: 2px;
+    height: 122px;
+}
+
+.lower_second_round_winner_line_bot_4 {
+    margin-top: -100px;
+    margin-bottom: 39px;
+    width: 2px;
+    height: 112px;
+}
+
+

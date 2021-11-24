@@ -1,0 +1,35 @@
+.region_name{
+    color: #AA9837;
+    font-size: 30px;
+    margin-left: 30px;
+    margin-top: 20px;
+    
+}
+
+.region_participants{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+@media (max-width: 1500px){
+	.region_participants{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+@media (max-width: 1200px){
+	.region_participants{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+@media (max-width: 900px){
+	.region_participants{
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 600px){
+	.region_participants{
+		grid-template-columns: 1fr;
+	}
+}

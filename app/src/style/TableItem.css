@@ -1,0 +1,36 @@
+.logo_team {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.logo_team img{
+    display: inline-block;
+    object-fit: contain;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.logo_team p {
+    display: inline-block;
+}
+
+.upper {
+    background-color: #BBFFCE;
+}
+
+.eliminated {
+    background-color: #FF9494;
+}
+
+.first{
+    background-color: #F9E890;
+}
+
+.second{
+    background-color: lightgray;
+}
+
+.third{
+    background-color: #FFE1E1;
+}

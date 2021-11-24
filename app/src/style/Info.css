@@ -1,0 +1,26 @@
+.info{
+    position: absolute;
+    right: 0;
+    font-size: 0px;
+}
+
+.info img{   
+    width: 400px;
+}
+
+.info p{
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    
+    padding: 10px;
+}
+
+.loc, .teams{
+    background-color: #DDDDDD;
+}
+
+.org, .dates, .prize{
+    background-color: #D4D4D4;
+}

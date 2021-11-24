@@ -1,0 +1,19 @@
+.head{
+    min-height: 570px;
+}
+
+hr{
+    background-color: blue;
+    height: 1px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.tour_head{
+    color: #AA9837;
+    font-size: 40px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+

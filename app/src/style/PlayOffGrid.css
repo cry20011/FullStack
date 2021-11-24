@@ -1,0 +1,79 @@
+.play_off_grid {
+    border: 1px solid gray;
+    margin: 20px;
+    padding: 20px;
+    overflow-x: scroll;
+    display: grid;
+    grid-template-columns: 1800px 500px;
+}
+
+.grand_final {
+    margin-top: 488px;
+}
+
+.winner_logo {
+    display: inline-block;
+    object-fit: contain;
+    height: 90px;
+    margin-left: -2px;
+}
+
+.upper_bracket, .lower_bracket {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px 300px 300px;
+}
+
+.upper_first_round,
+.lower_first_round,
+.lower_second_round,
+.lower_third_round,
+.lower_forth_round,
+.upper_second_round,
+.white_block,
+.first_white_block
+{
+    width: 300px;
+}
+
+
+.lower_second_round {
+    margin-top: 20px;
+}
+
+.upper_second_round .play_off_series_with_line {
+    margin-top: 95px;
+}
+
+.lower_third_round .series_table {
+    margin-top: 90px;
+}
+
+.lower_forth_round {
+    margin-top: 110px;
+}
+
+
+
+.play_off_series_with_line_VG_T1 {
+    margin-top: 45px;
+}
+
+.play_off_series_with_line_VG_IG {
+    margin-top: 135px;
+}
+
+.play_off_series_with_line_IG_Secret {
+    margin-top: 70px;
+}
+
+.play_off_series_with_line_LGD_VP {
+    margin-top: 135px;
+}
+
+.play_off_series_with_line_TS_Secret {
+    margin-top: 154px;
+}
+
+.play_off_series_with_line_LGD_Secret {
+    margin-top: 209px;
+}

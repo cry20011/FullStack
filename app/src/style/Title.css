@@ -1,0 +1,16 @@
+.title{
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(#D1CB3B, #ffffff);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.inner{
+    padding: 7px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 40px;
+    color: #605050;
+    font-weight: 700;
+}

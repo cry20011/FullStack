@@ -1,0 +1,40 @@
+.series_table {
+    display: inline-block;
+}
+
+.play_off_series {
+    margin-top: 50px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border: 2px solid black;
+    width: 220px;    
+}
+
+.play_off_series tr {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.play_off_series td {
+    border: 1px solid black;
+    padding: 4px;
+}
+
+.play_off_series img{
+    display: inline-block;
+    object-fit: contain;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.play_off_series p {
+    font-size: 18px;
+}
+
+.play_off_series p{
+    display: inline-block;
+}
+
+.team_score {
+    width: 30px;
+}
