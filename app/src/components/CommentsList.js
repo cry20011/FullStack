@@ -5,10 +5,11 @@ import CommentItem from "./CommentItem";
 import '../style/CommentsList.css'
 
 
-function CommentsList({comments}) {
+
+function CommentsList({ comments, setComments }) {
     return (
-        <div>
-            {comments.map(comment=><CommentItem comment={comment} />)}
+        <div className="comment_list">
+            {comments.map(comment=><CommentItem comment={comment} setComments={setComments}/>)}
         </div>
     )
 }

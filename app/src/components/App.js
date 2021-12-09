@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import { createStore } from "redux";
 import { reducer } from "../redux/Reducer";
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+    Link,
+} from 'react-router-dom';
 
 import Title from "./Title";
 import Info from "./Info";
@@ -34,8 +41,32 @@ import VPLogo from '../images/TeamsLogo/VPLogo.png'
 import ResultTable from "./ResultTable";
 import TeamItem from "./TeamItem";
 import AddComment from "./AddComment";
+import SignIn from "./SignIn";
+import { ApiClient } from "../services/ApiClient";
+import SignUp from "./SignUp";
 
-function App() {
+
+const baseUrl = 'http://127.0.0.1:8000/api/'
+
+
+
+
+export function App() {
+
+    const [isLogin, setIsLogin] = React.useState(window.localStorage.getItem('ACCESS'));
+    const [user, setUser] = React.useState('');
+
+    const fetchUser = async () => {
+        const user = await ApiClient('user/current');
+        setUser(user);
+      };
+    
+      React.useEffect(() => {
+        if (isLogin) {
+          void fetchUser();
+        }
+      }, [isLogin]);
+    
 
     const TeamsLogoPlayers = [
         {id: 1, name: 'Alliance', logo: AllianceLogo, players: {pos1: 'Nikobaby', pos2: 'LIMMP', pos3: 's4', pos4: 'Handsken', pos5: 'fng'}},
@@ -77,57 +108,91 @@ function App() {
     }
 
     const initialCommentsList = [
-        {id: 1, name: 'TSpirit:TORONTOTOKYO', text: 'ez game'},
-        {id: 2, name: 'OG:N0tail', text: 'ratatatata'},
-        {id: 3, name: 'Серега Чугун', text: 'Подпивас на топсоне'}
+        {name: 'TSpirit:TORONTOTOKYO', text: 'ez game'},
+        {name: 'OG:N0tail', text: 'ratatatata'},
+        {name: 'Серега Чугун', text: 'Подпивас на топсоне'}
     ];
 
-    const store_1 = createStore(reducer, initialCommentsList);
+    const [comments, setComments] = React.useState([]);
+    React.useEffect(() => {
+        const fetchComments = async () => {
+            const response = await fetch(baseUrl + "get_all/");
+            const comments_json = await response.json();
+            setComments(comments_json);
+        };
+        fetchComments();
+    }, []);
 
-    const [store, setStore] = useState(store_1)
-    const [state, setState] = useState(store.getState());
-
-    function changeComment() {
-        setState(()=>{
-            return store.getState()
-        })
-    };
-    store.subscribe(changeComment)
-
+    
     return (
-        <div>
-            <div className="head">
-                <Title />    
-                <Info />
-                <Infotext />
-            </div>
-            <div className="participants">
-                <ParticHead />
-                <RegionParticipants Region="Western Europe" Teams={GetTeamsByIds(WestEuIds)}/>
-                <RegionParticipants Region="Eastern Europe" Teams={GetTeamsByIds(EastEuIds)}/>
-                <RegionParticipants Region="China" Teams={GetTeamsByIds(ChinaIds)}/>
-                <RegionParticipants Region="South Asia" Teams={GetTeamsByIds(SouthAsiaIds)}/>
-                <RegionParticipants Region="North America" Teams={GetTeamsByIds(NorthAmericaIds)}/>
-                <RegionParticipants Region="South America" Teams={GetTeamsByIds(SouthAmericaIds)}/>
-                <hr />
-            </div>
-            <div className="tournament_events">
-                <p className="tour_head">Tournament</p>
-                <TournamentEvents Teams={TeamsLogoPlayers}/>
-                <hr />
-            </div>
-            <div className="results">
-                <p className="tour_head">Results</p>
-                <ResultTable Teams={TeamsLogoPlayers}/>
-            </div>
-            <div className="comments">
-                <p className="tour_head">Comments</p>
-                <hr />
-                <CommentsList comments={state} store={store}/>
-                <AddComment store={store} setStore={setStore}/>
-            </div>
-        </div>
+        <Router>
+            <Switch>
+                <Route path="/sign_in">
+                    <SignIn setIsLogin={setIsLogin}/>
+                </Route>
+                <Route path="/sign_up">
+                    <SignUp setIsLogin={setIsLogin}/>
+                </Route>
+                <Route path="/sign_out">
+                    
+                </Route>
+                <Route path="/">
+                    <div>
+                        <div className="head">
+                            <Title />    
+                            <Info />
+                            <Infotext />
+                        </div>
+                        <div className="participants">
+                            <ParticHead />
+                            <RegionParticipants Region="Western Europe" Teams={GetTeamsByIds(WestEuIds)}/>
+                            <RegionParticipants Region="Eastern Europe" Teams={GetTeamsByIds(EastEuIds)}/>
+                            <RegionParticipants Region="China" Teams={GetTeamsByIds(ChinaIds)}/>
+                            <RegionParticipants Region="South Asia" Teams={GetTeamsByIds(SouthAsiaIds)}/>
+                            <RegionParticipants Region="North America" Teams={GetTeamsByIds(NorthAmericaIds)}/>
+                            <RegionParticipants Region="South America" Teams={GetTeamsByIds(SouthAmericaIds)}/>
+                            <hr />
+                        </div>
+                        <div className="tournament_events">
+                            <p className="tour_head">Tournament</p>
+                            <TournamentEvents Teams={TeamsLogoPlayers}/>
+                            <hr />
+                        </div>
+                        <div className="results">
+                            <p className="tour_head">Results</p>
+                            <ResultTable Teams={TeamsLogoPlayers}/>
+                        </div>
+                        <div className="comments">
+                            <p className="tour_head">Comments</p>
+                            <hr />
+                                <CommentsList comments={comments} setComments={setComments}/>
+                                <AddComment comments={comments} setComments={setComments} isLogin={isLogin} user={user}/>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div className="links">
+                        <div className="link">
+                            <Link to="/sign_up">Sign up</Link>
+                        </div>
+
+                        <div className="link">
+                            {!isLogin ? 
+                            (<Link to="/sign_in">Sign in</Link>) : 
+                            (<Link to="/" onClick={() => {
+                                setIsLogin(false);
+                                window.localStorage.clear();
+                              }}>Sign out</Link>)
+                            }
+                        </div>
+                    </div>  
+                </Route>
+            </Switch>  
+        </Router>
     );
 }
-  
+{/* <AddComment store={store} setStore={setStore}/>
+<CommentsList comments={state} store={store}/> */}
+
 export default App;

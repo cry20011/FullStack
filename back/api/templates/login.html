@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>fullstack-2021</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui, user-scalable=no"
+    />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>{{ form.as_p }}</div>
+        <input type="submit" value="Войти" />
+    </form>
+  </body>
+  <script type="text/javascript" src="js/index.js"></script>
+</html>
+ 

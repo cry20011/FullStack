@@ -10,7 +10,6 @@ import '../style/PlayOffLines.css'
 function PlayOffGrid({Teams}) {
 
     const GetTeamById = (id)=>Teams.filter(item=>item.id === id)
-    console.log(GetTeamById(15))
 
     return (
        <div className="play_off_grid">
