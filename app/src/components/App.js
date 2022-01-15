@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import { createStore } from "redux";
-import { reducer } from "../redux/Reducer";
+import React from "react";
 
 import {
     BrowserRouter as Router,
@@ -46,7 +44,7 @@ import { ApiClient } from "../services/ApiClient";
 import SignUp from "./SignUp";
 
 
-const baseUrl = 'http://127.0.0.1:8000/api/'
+const baseUrl = 'http://84.201.151.239:8000/api/'
 
 
 
@@ -118,6 +116,7 @@ export function App() {
         const fetchComments = async () => {
             const response = await fetch(baseUrl + "get_all/");
             const comments_json = await response.json();
+            console.log(comments_json);
             setComments(comments_json);
         };
         fetchComments();

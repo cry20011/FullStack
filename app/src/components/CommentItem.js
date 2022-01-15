@@ -2,7 +2,7 @@ import React from "react";
 
 import '../style/CommentItem.css'
 
-const baseUrl = 'http://127.0.0.1:8000/api/'
+const baseUrl = 'http://84.201.151.239:8000/api/'
 
 const drop = (id)=>{
   fetch(baseUrl + `drop/${id}`, {

@@ -4,7 +4,7 @@ export function useAuth(setIsLogin, setError) {
   const history = useHistory();
 
   const onAuth = async (login, password) => {
-    const response = await fetch('http://localhost:8000/api/token/', {
+    const response = await fetch('http://84.201.151.239:8000/api/token/', {
       method: 'POST',
       headers: {
         'Content-Type': 'Application/json',

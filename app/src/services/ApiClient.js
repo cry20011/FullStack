@@ -1,4 +1,4 @@
-const apiBase = 'http://localhost:8000/api/';
+const apiBase = 'http://84.201.151.239:8000/api/';
 
 export async function ApiClient(url) {
   const access = window.localStorage.getItem('ACCESS');

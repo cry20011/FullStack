@@ -24,7 +24,7 @@ export default function SignUp({ setIsLogin }) {
       return;
     }
 
-    const response = await fetch('http://localhost:8000/api/users/', {
+    const response = await fetch('http://84.201.151.239:8000/api/users/', {
       method: 'POST',
       headers: {
         'Content-Type': 'Application/json',
@@ -46,7 +46,7 @@ export default function SignUp({ setIsLogin }) {
     <div className='login_form'>
       <form>
         <div className='login'>
-          <p>Логин</p>
+          <p>Login</p>
           <input
             type='text'
             value={login}
@@ -54,7 +54,7 @@ export default function SignUp({ setIsLogin }) {
           ></input>
         </div>
         <div className='password'>
-          <p>Пароль</p>
+          <p>Password</p>
           <input
             type='password'
             value={password}

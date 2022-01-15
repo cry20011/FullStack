@@ -2,7 +2,7 @@ import React from "react";
 
 import '../style/AddComment.css'
 
-const baseUrl = 'http://127.0.0.1:8000/api/'
+const baseUrl = 'http://84.201.151.239:8000/api/'
 
 function AddComment({comments, setComments, isLogin, user}) {
     let data = {
@@ -48,16 +48,22 @@ function AddComment({comments, setComments, isLogin, user}) {
                 }
             }
             create(data)
+        } else {
+
         }
     }
     
-    return (
-        <form onSubmit={submitHandler}>
-            <div>
-                <input type='text' className='input_comment' placeholder='Add Comment' onChange={handlerChange} onSubmit={handlerInputSubmit}/>
-            </div>
-        </form>
-    )
+    if(isLogin) {
+        return (
+            <form onSubmit={submitHandler}>
+                <div>
+                    <input type='text' className='input_comment' placeholder='Add Comment' onChange={handlerChange} onSubmit={handlerInputSubmit}/>
+                </div>
+            </form>
+        )
+    } else {
+        return (<div></div>)
+    }
 }
   
 export default AddComment;
